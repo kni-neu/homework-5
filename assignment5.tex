@@ -1,0 +1,58 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\newcommand{\assignment}{5}
+\newcommand{\duedate}{February 1, 2023}
+\input{include/hw-template.tex}
+\author{
+    \textbf{YOUR NAME} \\ 
+    \textbf{YOUR GIT USERNAME} \\ 
+    \textbf{YOUR E-MAIL}
+}% INFORMATION
+
+\begin{document}
+
+\maketitle % Print the title
+
+{\huge \textbf{Na\"ive Bayes, Bayes Rules}} \\
+
+The original performance of \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6339026/}{acoustic classification for Parkinsons Disease} leverages speech recordings from controlled subject responses from variety of questions. The task in the competition was to detect whether or not a person $X$ had Parkinsons disease from a sampling of data. As of 2018, the state of the art classifiers have achieved 90\% correct classification on a held out dataset, both for subjects who had Parkinsons and those who did not (at equal rates). So, when classifier $Y$ sees person $X$, it works correctly 90\% of the time. \\
+
+{\Large \textbf{Question 1} [25 pts total]} \\
+\\
+Let's say that we run a clinic. This clinic leverages this classifier, which has 90\% accuracy. Also, let us say that we know that our current patient load is that 10\% of the population have Parkinsons and 90\% of the population do not. Let's also say that we're seeing patient $X$, and the classification algorithm has detected that they have Parkinson's disease. What's the probability that indeed $X$ has Parkinson's disease? \\
+
+Come up with the numerical solution, and show your written work.
+
+\vspace{1.5cm}
+{\huge \textbf{Gradient Descent - Logistic Regression}}
+\vspace{3mm}
+
+Yann LeCun, the Director of Facebook Research and one of the fathers of deep learning neural networks, got his start with the MNIST Dataset, which is widely regarded as the "Hello World" of Computer Vision. The MNIST dataset can be downloaded at \href{http://yann.lecun.com/exdb/mnist/}{LeCun's website}.
+
+Logistic regression's cost function is typically binary cross-entropy.
+
+\begin{equation}
+    \mathcal{L}(W, b) = -\sum_i y_i \log{ h_{W,b}(\textbf{x}) } + (1 - y_i) \log{( 1 - h_{W,b}(\textbf{x})) } \nonumber
+\end{equation}
+where 
+\begin{equation}
+h_{W,b}(\textbf{x}) = \sigma \left( W^T\textbf{x} + b \right) \nonumber
+\end{equation}
+and
+\begin{equation}
+\sigma(z) = \frac{1}{1 - \exp(-z)} \nonumber
+\end{equation} \\
+\\
+{\Large \textbf{Question 2a.)}} \\
+Prove that the derivative of the sigmoid function is $\nabla_z \sigma(z) = \sigma(z) \left(1 - \sigma(z)\right)$. \\
+\\
+{\Large \textbf{Question 2b.)}} \\
+
+Given the cost function defined above, let's assign the estimate
+
+\begin{itemize}
+    \item The gradient of $\mathcal{L}$ with respect to $W$: $\nabla_W \mathcal{L} = \left(\textbf{y} - h_{W,b}(\textbf{x}) \right) \cdot \textbf{x}^T$
+    \item The gradient of $\mathcal{L}$ with respect to $b$: $\nabla_b \mathcal{L} = \left(\textbf{y} - h_{W,b}(\textbf{x}) \right)$
+\end{itemize}
+
+\end{document}
