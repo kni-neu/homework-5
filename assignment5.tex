@@ -1,8 +1,8 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
 
 \newcommand{\assignment}{5}
-\newcommand{\duedate}{February 1, 2023}
-\input{hw-template.tex}
+\newcommand{\duedate}{March 15, 2023}
+\input{include/hw-template.tex}
 \author{
     \textbf{YOUR NAME} \\ 
     \textbf{YOUR GIT USERNAME} \\ 
@@ -22,6 +22,7 @@ The original performance of \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6
 Let's say that we run a clinic. This clinic leverages this classifier, which has 90\% accuracy. Also, let us say that we know that our current patient load is that 10\% of the population have Parkinsons and 90\% of the population do not. Let's also say that we're seeing patient $X$, and the classification algorithm has detected that they have Parkinson's disease. What's the probability that indeed $X$ has Parkinson's disease? \\
 
 Come up with the numerical solution, and show your written work.
+
 
 \vspace{1.5cm}
 {\huge \textbf{Gradient Descent - Logistic Regression}}
@@ -50,10 +51,11 @@ Also, recall that you can solve the logistic regression problem entirely through
     \item The gradient of $\mathcal{L}$ with respect to $b$: $\nabla_b \mathcal{L} = \left(\textbf{y} - h_{W,b}(\textbf{x}) \right)$
 \end{itemize}
 
-
+\vspace{1cm}
 {\Large \textbf{Question 2a.)}} \\
 
 Prove that the derivative of the sigmoid function is $\nabla_z \sigma(z) = \sigma(z) \left(1 - \sigma(z)\right)$. 
+
 
 \vspace{1cm}
 {\Large \textbf{Question 2b.)}} \\
@@ -63,18 +65,25 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history. On
 Some tips and tricks:
 
 \begin{itemize}
-    \item For features with multiple values, try making one-hot encoded data. For example, number of siblings, you can try to have a four column array. \\
+    \item For features with multiple values, try making one-hot encoded data. For example, number of siblings, you can try to have a five column array. \\
     
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
         \hline
-         No Siblings & 1 Sibling & 2 Siblings & 3 or more Siblings  \\
+         No Siblings & 1 Sibling & 2 Siblings & 3 Siblings & 4+ Siblings  \\
          \hline
-                0    &    1      &      0     &       0 \\
+                0    &    1      &      0     &       0  &    0\\
         \hline
     \end{tabular} \\
-    \item Play around with your learning rate. If your learning is too high, then you won't converge to the right answer. I used X features with a learning rate of.  \item You needn't use all the features. Just because they're there, doesn't mean they're always useful.
+    \item Play around with your learning rate. If your learning is too high, then you won't converge to the right answer. I used X features with a learning rate of.
+    \item You needn't use all the features. Just because they're there, doesn't mean they're always useful.
 \end{itemize}
 
-See if you can do better than I can with a logistic regression. On the test set, I reached 79.2\% accuracy at a threshold of 0.5.
+You should adopt the code from the lecture (and not use a toolbox). See if you can do better than I can with a logistic regression. On the test set, I reached 79.2\% accuracy at a threshold of 0.5. Plot out the loss curve and print your overall accuracy.
+
+\vspace{1cm}
+{\Large \textbf{Question 2c.)}} \\
+
+Using a toolbox (like Keras), try doing the same with a few more layers (i.e., a neural network). Diagram your neural network architecture and print out your overall \textbf{test set} accuracy. Make sure you do \emph{not} train on any samples from your test set.
+
 
 \end{document}
