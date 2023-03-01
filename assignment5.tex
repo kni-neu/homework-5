@@ -27,7 +27,9 @@ Come up with the numerical solution, and show your written work.
 {\huge \textbf{Gradient Descent - Logistic Regression}}
 \vspace{3mm}
 
-The sinking of the Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg. Unfortunately, there were not enough lifeboats for everyone onboard, resulting in the death of 1502 out of 2224 passengers and crew. While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others. In this challenge, Kaggle asks you to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (i.e., name, age, gender, socio-economic class, etc). \\
+The sinking of the RMS Titanic is the most notorious shipwrecks in history, sinking in the early hours of April 15, 1912. During her maiden voyage, the Titanic was widely considered “unsinkable”, but ultimately sank after colliding with an iceberg. In accordance with existing practice, Titanic's lifeboats did not account for all passengers onboard, and of the 2,224 passnegers, 1502 of them perished, most of whom were still on board when the ship sank. While seemingly random, it seems that some groups of people were more likely to survive than others. 
+
+In this homework question, which is mirrored on \href{https://www.kaggle.com/competitions/titanic/overview}{Kaggle} (though the data samples are different), we ask you to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (i.e., name, age, gender, socio-economic class, etc). You can try getting hints on what features predicted survival from the \href{https://en.wikipedia.org/wiki/Sinking_of_the_Titanic#Casualties_and_survivors}{Wikipedia page}. \\
 
 For \textbf{Question 2b.)}, we'll be using logistic regression with binary cross-entropy cost function appearing in the following form: \\
 
@@ -79,9 +81,10 @@ Some tips and tricks:
     \item Play around with your learning rate. If your learning is too high or too low, then you won't converge to the right answer.
     \item You don't use all the features. Just because they're there, doesn't mean they're always useful. (I ignored using the names.)
     \item Make sure you normalize your features to have similar ranges. You needn't use the standard scalar (i.e., z-scores), but if you don't transform some features, the logistic regression will not work well.
+    \item While Kaggle provides good descriptions of what the data is, do \emph{NOT} use the Kaggle dataset. Only use data provided via \href{https://course.ccs.neu.edu/cs6220/homework-5/}{course website}.
 \end{itemize}
 
-See if you can do better than I can with a \textbf{logistic regression}. On the test set, adopting the code that we used in class, I reached 79.2\% accuracy at a threshold of 0.5, using just a few features. \\
+See if you can do better than I can with a \textbf{logistic regression} by adopting the code from the lab in lecture. On the test set, with that code, I reached 79.2\% accuracy at a threshold of 0.5, using just a few features. \\
 
 For this question, submit a plot of your loss curve and print your overall accuracy on training and test sets. Include what features you used, what you did to transform them, and also include what you used as a learning rate.
 
